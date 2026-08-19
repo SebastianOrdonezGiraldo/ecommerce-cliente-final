@@ -82,10 +82,10 @@ it('displays navigation buttons when the customer is logged in', function () {
 it('should returns the home page of the store', function () {
     get(route('shop.home.index'))
         ->assertOk()
-        ->assertSeeText('The game with our new additions!')
-        ->assertSeeText('Our Collections')
-        ->assertSeeText('Get Ready for our new Bold Collections!')
-        ->assertSeeText('Get UPTO 40% OFF on your 1st order SHOP NOW');
+        ->assertSeeText('Equipos de terapia física')
+        ->assertSeeText('que generan confianza.')
+        ->assertSeeText('Ver productos')
+        ->assertSeeText('Explorar catálogo');
 });
 
 it('should returns the search page of the products', function () {
@@ -216,7 +216,7 @@ it('should store the products to the compare list', function () {
         'product_id' => $product->id,
     ])
         ->assertOk()
-        ->assertSeeText(trans('shop::app.compare.item-add-success'));
+        ->assertJsonPath('data.message', trans('shop::app.compare.item-add-success'));
 });
 
 it('should fails the validation error when not provided product id when move the compare list item', function () {

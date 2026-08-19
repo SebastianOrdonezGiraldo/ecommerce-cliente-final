@@ -3,6 +3,7 @@
 namespace Webkul\Installer\Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 use Webkul\Installer\Database\Seeders\Attribute\DatabaseSeeder as AttributeSeeder;
 use Webkul\Installer\Database\Seeders\Category\DatabaseSeeder as CategorySeeder;
 use Webkul\Installer\Database\Seeders\CMS\DatabaseSeeder as CMSSeeder;
@@ -29,6 +30,10 @@ class DatabaseSeeder extends Seeder
         $this->call(CategorySeeder::class, false, ['parameters' => $parameters]);
 
         $this->call(CoreSeeder::class, false, ['parameters' => $parameters]);
+
+        if (! DB::table('products')->exists()) {
+            $this->call(ProductTableSeeder::class, false, ['parameters' => $parameters]);
+        }
 
         $this->call(CustomerSeeder::class, false, ['parameters' => $parameters]);
 

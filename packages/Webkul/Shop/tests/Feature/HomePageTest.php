@@ -82,8 +82,7 @@ it('displays navigation buttons when the customer is logged in', function () {
 it('should returns the home page of the store', function () {
     get(route('shop.home.index'))
         ->assertOk()
-        ->assertSeeText('Equipos de terapia física')
-        ->assertSeeText('que generan confianza.')
+        ->assertSeeText('Soluciones para rehabilitación y bienestar.')
         ->assertSeeText('Ver productos')
         ->assertSeeText('Explorar catálogo');
 });

@@ -17,12 +17,12 @@
 <x-shop::layouts :has-feature="false">
     <x-slot:title>{{ $channel->home_seo['meta_title'] ?? 'ICM Therapy' }}</x-slot>
 
-    <section class="icm-home-hero px-6 py-20 sm:px-10 lg:px-20 lg:py-28">
+    <section class="icm-home-hero px-6 py-14 sm:px-10 lg:px-20 lg:py-20">
         <div class="mx-auto max-w-[1440px]">
             <p class="icm-hero-kicker mb-5 text-sm font-semibold uppercase tracking-[.25em]">ICM Therapy</p>
-            <h1 class="icm-hero-title">Equipos de terapia física<br>que generan confianza.</h1>
-            <p class="icm-hero-copy mt-7 max-w-xl text-base sm:text-lg">Importamos y distribuimos soluciones para rehabilitación, fisioterapia, movimiento y bienestar. Calidad técnica para acompañar cada recuperación.</p>
-            <div class="icm-hero-actions mt-8">
+            <h1 class="icm-hero-title">Soluciones para rehabilitación y bienestar.</h1>
+            <p class="icm-hero-copy mt-5 max-w-xl text-base sm:text-lg">Equipos y productos para acompañar el movimiento, la recuperación y el cuidado profesional.</p>
+            <div class="icm-hero-actions mt-6">
                 <a class="icm-hero-primary" href="#icm-products">Ver productos</a>
                 <a class="icm-hero-secondary" href="{{ route('shop.search.index') }}">Explorar catálogo</a>
             </div>

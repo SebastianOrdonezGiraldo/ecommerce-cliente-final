@@ -48,7 +48,13 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->trustProxies(at: '*');
     })
     ->withSchedule(function (Schedule $schedule) {
-        //
+        $schedule->command('contapyme:sync-stock')
+            ->everyFiveMinutes()
+            ->withoutOverlapping(10);
+
+        $schedule->command('contapyme:sync-catalog')
+            ->hourly()
+            ->withoutOverlapping(60);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
